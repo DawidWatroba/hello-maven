@@ -12,7 +12,7 @@ class LangRepository {
         languages.add(new Lang(1L, "Hello", "en"));
         languages.add(new Lang(2L, "Siema", "pl"));
     }
-    Optional<Lang> findById(Lang id){
+    Optional <Lang> findById(Long id){
         return languages.stream()
                 .filter(l -> l.getId().equals(id))
                 .findFirst();

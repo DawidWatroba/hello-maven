@@ -5,7 +5,7 @@ class Lang {
     private String welcomeMsg;
     private String code;
 
-    private Lang(Long id, String welcomeMsg, String code) {
+    public Lang(Long id, String welcomeMsg, String code) {
         this.id = id;
         this.welcomeMsg = welcomeMsg;
         this.code = code;
