@@ -15,6 +15,7 @@
         <junit.version>4.12</junit.version>
         <jetty.version>9.4.21.v20190926</jetty.version>
         <slf4j.version>1.7.25</slf4j.version>
+        <jackson.version>2.10.0</jackson.version>
 
     </properties>
 
@@ -55,11 +56,22 @@
             <artifactId>jetty-annotations</artifactId>
             <version>${jetty.version}</version>
         </dependency>
+     <!-- JSON -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
         <!-- data bases -->
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
             <version>1.4.199</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.4.8.Final</version>
         </dependency>
     </dependencies>
 
