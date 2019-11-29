@@ -1,5 +1,5 @@
 create table todos(
     id int unsigned primary key auto_increment,
-    taskToDo varchar(100) not null,
+    text varchar(100) not null,
     done boolean,
 );

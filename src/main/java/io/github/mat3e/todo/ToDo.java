@@ -1,4 +1,4 @@
-package io.github.mat3e.toDo;
+package io.github.mat3e.todo;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -9,13 +9,13 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "todos")
-public class ToDo {
+    class ToDo {
     @Id
     @GeneratedValue(generator = "inc")
     @GenericGenerator(name = "inc", strategy = "increment")
     private Integer id;
-    String taskToDo;
-    Boolean done;
+    private String text;
+    private Boolean done;
 
     /**
      * Hibernate (JPA) needs it :)
@@ -31,12 +31,12 @@ public class ToDo {
         this.id = id;
     }
 
-    public String getTaskToDo() {
-        return taskToDo;
+    public String getText() {
+        return text;
     }
 
-    public void setTaskToDo(String taskToDo) {
-        this.taskToDo = taskToDo;
+    public void setText(String taskToDo) {
+        this.text = taskToDo;
     }
 
     public Boolean getDone() {
@@ -49,7 +49,7 @@ public class ToDo {
 
     public ToDo(Integer id, String taskToDo, Boolean done) {
         this.id = id;
-        this.taskToDo = taskToDo;
+        this.text = taskToDo;
         this.done = done;
     }
 }
