@@ -14,4 +14,15 @@ public class ToDoRepository {
         session.close();
         return result;
     }
+    ToDo toggleTodo(Integer id) {
+        var session = HibernateUtil.getSessionFactory().openSession();
+        var transaction = session.beginTransaction();
+
+        var result = session.get(ToDo.class, id);
+        result.setDone(!result.isDone());
+
+        transaction.commit();
+        session.close();
+        return result;
+    }
 }

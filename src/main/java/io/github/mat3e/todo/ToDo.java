@@ -39,7 +39,7 @@ import javax.persistence.Table;
         this.text = taskToDo;
     }
 
-    public Boolean getDone() {
+    public Boolean isDone() {
         return done;
     }
 
