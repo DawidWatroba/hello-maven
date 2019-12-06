@@ -47,9 +47,4 @@ import javax.persistence.Table;
         this.done = done;
     }
 
-    public ToDo(Integer id, String taskToDo, Boolean done) {
-        this.id = id;
-        this.text = taskToDo;
-        this.done = done;
-    }
 }

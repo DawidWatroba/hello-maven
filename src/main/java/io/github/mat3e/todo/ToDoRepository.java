@@ -17,12 +17,25 @@ public class ToDoRepository {
     ToDo toggleTodo(Integer id) {
         var session = HibernateUtil.getSessionFactory().openSession();
         var transaction = session.beginTransaction();
-
         var result = session.get(ToDo.class, id);
-        result.setDone(!result.isDone());
+        try {
+            result.setDone(!result.isDone());
+        }catch (NullPointerException e){
+            e.printStackTrace();
+        }
 
         transaction.commit();
         session.close();
         return result;
+    }
+    ToDo addTodo(ToDo newTodo){
+        var session = HibernateUtil.getSessionFactory().openSession();
+        var transaction = session.beginTransaction();
+
+        session.persist(newTodo);
+
+        transaction.commit();
+        session.close();
+        return newTodo;
     }
 }
